@@ -2,88 +2,108 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FlexPlay</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-image: url('background.jpg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      text-align: center;
-    }
-    .logo {
-      margin-top: 80px;
-    }
-    .logo img {
-      width: 150px;
-    }
-    h1 {
-      font-size: 40px;
-      margin: 10px 0;
-    }
-    .button {
-      margin: 20px auto;
-      padding: 15px 30px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      display: block;
-    }
-    .download-btn {
-      background-color: #e74c3c;
-      color: white;
-    }
-    .whatsapp-btn {
-      background-color: #2ecc71;
-      color: white;
-    }
-    .ad-banner {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 10px 15px;
-      border-radius: 8px;
-      width: fit-content;
-      margin: 30px auto;
-      font-size: 18px;
-    }
-    #download-message {
-      display: none;
-      margin-top: 20px;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: yellow;
-      padding: 15px 20px;
-      font-size: 20px;
-      border-radius: 10px;
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>FlexPlay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body {
+            background: url('background.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .whatsapp-text {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        .download-button {
+            background-color: #e63946;
+            color: white;
+            border: none;
+        }
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            border: none;
+        }
+        .footer-bar {
+            position: absolute;
+            bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+        #download-message {
+            display: none;
+            margin-top: 10px;
+            background-color: rgba(0,0,0,0.7);
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-  <div class="logo">
-    <img src="icon.png" alt="FlexPlay Logo">
-  </div>
-  <h1>FLEXPLAY</h1>
-  <p>لشراء كود التفعيل أو للتواصل مع الدعم الفني</p>
-  <button class="button download-btn" onclick="showDownloadMessage()">تحميل التطبيق</button>
-  <button class="button whatsapp-btn" onclick="window.open('https://wa.me/212606726090', '_blank')">تواصل عبر واتساب</button>
+    
+    <h1>FLEXPLAY</h1>
 
-  <div class="ad-banner">لطلبات الإعلانية تواصلوا معنا عبر واتساب</div>
-  <div id="download-message">لم يتم وضع التطبيق بعد..</div>
+    <button class="button download-button" onclick="showDownloadMessage()">تحميل التطبيق</button>
+<div id="downloadMessage" style="display: none; background-color: rgba(0, 0, 0, 0.7); color: yellow; padding: 10px 20px; margin-top: 15px; border-radius: 8px; font-size: 1.2em;">
+    لم يتم وضع التطبيق بعد..
+</div>
 
-  <script>
-    function showDownloadMessage() {
-      var message = document.getElementById("download-message");
-      message.style.display = "block";
-      setTimeout(() => {
-        message.style.display = "none";
-      }, 5000);
-    }
-  </script>
+
+    <div class="whatsapp-text">لشراء كود التفعيل أو للتواصل مع الدعم الفني</div>
+    <a href="https://wa.me/212606726090" class="button whatsapp-button">تواصل عبر واتساب</a>
+
+    <div id="download-message" style="color: yellow; font-size: 24px; font-weight: bold; background-color: rgba(0,0,0,0.6); padding: 10px 20px; border-radius: 10px; margin-top: 20px;">لم يتم وضع التطبيق بعد..</div>
+
+    <div class="footer-bar">للطلبات الإعلانية تواصلوا معنا عبر واتساب</div>
+
+    <script>
+        function showDownloadMessage() {
+            const msg = document.getElementById("download-message");
+            msg.style.display = "block";
+            setTimeout(() => {
+                msg.style.display = "none";
+            }, 5000);
+        }
+    </script>
+<script>
+document.getElementById('downloadButton').addEventListener('click', function() {
+    const msg = document.getElementById('downloadMessage');
+    msg.style.display = 'block';
+    setTimeout(() => {
+        msg.style.display = 'none';
+    }, 5000);
+});
+</script>
 </body>
 </html>
