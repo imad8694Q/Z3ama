@@ -1,0 +1,62 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+.container {
+  padding: 20px;
+}
+.logo {
+  width: 120px;
+  margin-top: 10px;
+}
+.app-icon {
+  width: 100px;
+  margin-top: 15px;
+}
+.banner {
+  width: 200px;
+  margin: 20px auto;
+}
+button, .whatsapp-btn {
+  display: block;
+  margin: 10px auto;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#download-btn {
+  background-color: #d32f2f;
+  color: white;
+}
+.whatsapp-btn {
+  background-color: #25d366;
+  color: white;
+  text-decoration: none;
+}
+#ad-message, .whatsapp-message {
+  margin-top: 15px;
+  font-size: 14px;
+}
+#ad-message {
+  color: #ffc107;
+}
+#ad-message::before {
+  content: "📢 ";
+}
+#app-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  border-radius: 8px;
+}
+.hidden {
+  display: none;
+}
